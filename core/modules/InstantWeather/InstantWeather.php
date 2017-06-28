@@ -12,10 +12,10 @@ class InstantWeather extends CodonModule
 	public function chk_update()
 		{
 			$ver = 1.1; 
-			$ver_actual = floatval(file_get_contents("http://philippdalheimer.de/phpvms-demo-1/lib/skins/future/instantweather_ver.txt")); 
+			$ver_actual = floatval(file_get_contents("http://philippdalheimer.de/instantweather_ver.txt")); 
 			
 			if($ver_actual > $ver){
-				echo ' | <a href="http://philippdalheimer.de/phpvms-demo-1/" target="_blank"><font color="red">new version '.$ver_actual.' available!</a>';
+				echo ' | <a href="https://github.com/Karamellwuerfel/InstantWeather" target="_blank"><font color="red">new version '.$ver_actual.' available!</a>';
 			}else{
 				//nothing
 			}
