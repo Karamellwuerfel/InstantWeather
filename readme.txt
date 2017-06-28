@@ -1,0 +1,21 @@
+InstantWeather Module v1.0 for phpvms by Philipp Dalheimer
+
+www.philippdalheimer.de
+
++ DO NOT EDIT 
++ FOR FREE USE 
++ PHPVMS FORUM: MrDonutButter
+
+
+#########INSTALLATION#########
+
+1. Copy the "core/modules/InstantWeather"-folder into your "core/modules"-folder of your va
+2. Copy the "core/templates/instantweather"-folder into your "core/templates"-folder of your va
+
+3. To show the module in the navigation: <li><a href="<?php echo url('/instantweather'); ?>">InstantWeather</a></li>
+
+#########QUESTIONS#########
+
+If you have questions, you can write me in phpvms forum in THIS POST (not via PN!)
+
+https://forum.phpvms.net/topic/24355-simple-instantweather-module/
