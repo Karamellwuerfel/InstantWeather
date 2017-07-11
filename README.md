@@ -7,7 +7,7 @@ Hey guys! I've made a Weather module that shows you real time and
 
 instant weather informations of the current airport where the logged in pilot is.
 
-DEMO VIDEO: [www.youtube.com/watch?v=Cx0HCaW-a5I]
+DEMO VIDEO: [(www.youtube.com/watch?v=Cx0HCaW-a5I)]
 
 # INSTALLATION
 
