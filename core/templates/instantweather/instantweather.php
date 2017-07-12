@@ -5,7 +5,7 @@
 
 
 <!--///////////////////////////////////////////////////////////////
-/////InstantWeather Module v1.2 for phpvms by Philipp Dalheimer////
+/////InstantWeather Module v1.3 for phpvms by Philipp Dalheimer////
 //////////////////////www.philippdalheimer.de//////////////////////
 ///+ DO NOT EDIT + FOR FREE USE + PHPVMS FORUM: MrDonutButter +////
 
@@ -34,15 +34,15 @@ Weather API from https://aviationweather.gov/adds/dataserver/metars/MetarExample
 				  </tr>
 				  <tr>
 					<td class="fat">Wind</td>
-					<td><?php echo $wind_dir_deg;?>° with <?php echo $wind_speed_kt;?> kts</td>
+					<td><?php echo $wind_dir_deg;?>&deg; with <?php echo $wind_speed_kt;?> kts</td>
 				  </tr>
 				  <tr>
 					<td class="fat">Temperature</td>
-					<td><?php echo $temp_c;?> °C</td>
+					<td><?php echo $temp;?> <?php echo ' '. $temp_indicator;?></td>
 				  </tr>
 				  <tr>
 					<td class="fat">Dewpoint</td>
-					<td><?php echo $dewpoint;?> °C</td>
+					<td><?php echo $dewpoint;?> <?php echo ' '. $temp_indicator;?></td>
 				  </tr>
 				  <tr>
 					<td class="fat">Horizontal visibility</td>
@@ -53,7 +53,7 @@ Weather API from https://aviationweather.gov/adds/dataserver/metars/MetarExample
 					
 				</table>
 				<br>
-				<small style="color:#a3a3a3;">Updated <?php echo $observation_time;?>  |  InstantWeather Module v1.2 by <a href="http://philippdalheimer.de/" target="_blank">Philipp Dalheimer</a><?php MainController::Run('InstantWeather', 'chk_update', ''); ?>
+				<small style="color:#a3a3a3;">Updated <?php echo $observation_time;?>  |  InstantWeather Module v1.3 by <a href="http://philippdalheimer.de/" target="_blank">Philipp Dalheimer</a><?php MainController::Run('InstantWeather', 'chk_update', ''); ?>
 					<br>
 					<br>
 					How do I <a href="https://en.wikipedia.org/wiki/METAR#Example_METAR_codes" target="_blank"> read METAR </a> and how do I <a href="https://en.wikipedia.org/wiki/METAR#Cloud_reporting" target="_blank">read sky condition</a> ?

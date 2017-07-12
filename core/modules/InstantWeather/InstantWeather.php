@@ -1,5 +1,5 @@
 <!--///////////////////////////////////////////////////////////////
-/////InstantWeather Module v1.2 for phpvms by Philipp Dalheimer////
+/////InstantWeather Module v1.3 for phpvms by Philipp Dalheimer////
 //////////////////////www.philippdalheimer.de//////////////////////
 ///+ DO NOT EDIT + FOR FREE USE + PHPVMS FORUM: MrDonutButter +////
 ///////////////////////////////////////////////////////////////-->
@@ -10,9 +10,10 @@
 	{
 		
 		
+		
 		public function chk_update(){
 			
-			$ver = 1.2; 
+			$ver = 1.3; 
 			$ver_actual = floatval(file_get_contents("http://philippdalheimer.de/instantweather_ver.txt")); 
 			
 			if($ver_actual > $ver){
@@ -25,7 +26,15 @@
 			
 		
 		public function index(){
-
+			
+			$TEMPERATURE = "f"; // USE f for FAHRENHEIT and c for CELSIUS
+			
+			
+			// Don't change anything below!
+			
+			$celsius = "c";
+			$fahrenheit = "f";
+			
 			$last_location = PIREPData::getLastReports(Auth::$userinfo->pilotid, 1, PIREP_ACCEPTED);
 			$curr_location = $last_location->arricao;
 			$url = 'https://www.aviationweather.gov/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&stationString='.$curr_location.'&hoursBeforeNow=1.0';
@@ -40,6 +49,11 @@
 			$visibility_statute_mi = $xml->data[0]->METAR->visibility_statute_mi;
 			$dewpoint_c = $xml->data[0]->METAR->dewpoint_c;
 			$elevation_m = $xml->data[0]->METAR->elevation_m;
+			
+			$temp_f = ($temp_c * (9 / 5) ) + 32;
+			$dewpoint_f = ($dewpoint_c * (9 / 5) ) + 32;
+			
+			
 	
 			$this->set('curr_location', $curr_location);
 			$this->set('last_location', $last_location);
@@ -47,11 +61,22 @@
 			$this->set('icao', $station_id);
 			$this->set('observation_time', $observation_time);
 			$this->set('wind_dir_deg', $wind_dir_degrees);
-			$this->set('temp_c', $temp_c);
 			$this->set('wind_speed_kt', $wind_speed_kt);
 			$this->set('visibility_statute_mi', $visibility_statute_mi);
-			$this->set('dewpoint', $dewpoint_c);
 			$this->set('elevation', $elevation_m);
+	
+			if($TEMPERATURE == $celsius){
+				$this->set('dewpoint', $dewpoint_c);
+				$this->set('temp', $temp_c);
+				$this->set('temp_indicator', "&deg;C");
+			}
+			
+			if($TEMPERATURE == $fahrenheit){
+				$this->set('dewpoint', $dewpoint_f);
+				$this->set('temp', $temp_f);
+				$this->set('temp_indicator', "&deg;F");
+			}
+	
 	
 			$this->show('/instantweather/instantweather.php');
 			
