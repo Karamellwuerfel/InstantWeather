@@ -5,12 +5,13 @@
 ///////////////////////////////////////////////////////////////-->
 
 <?php
-class InstantWeather extends CodonModule
-{
-	
-	
-	public function chk_update()
-		{
+
+	class InstantWeather extends CodonModule
+	{
+		
+		
+		public function chk_update(){
+			
 			$ver = 1.1; 
 			$ver_actual = floatval(file_get_contents("http://philippdalheimer.de/instantweather_ver.txt")); 
 			
@@ -19,18 +20,16 @@ class InstantWeather extends CodonModule
 			}else{
 				//nothing
 			}
-			
+				
 		}
+			
 		
-	
-	public function index() 
-	   {
+		public function index(){
 
 			$last_location = PIREPData::getLastReports(Auth::$userinfo->pilotid, 1, PIREP_ACCEPTED);
 			$curr_location = $last_location->arricao;
 			$url = 'https://www.aviationweather.gov/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&stationString='.$curr_location.'&hoursBeforeNow=1.0';
 			$xml = simplexml_load_file($url);
-			
 
 			$metar = $xml->data[0]->METAR->raw_text;
 			$station_id = $xml->data[0]->METAR->station_id;
@@ -54,11 +53,12 @@ class InstantWeather extends CodonModule
 			$this->set('dewpoint', $dewpoint_c);
 			$this->set('elevation', $elevation_m);
 	
-            $this->show('/instantweather/instantweather.php');
-        }
-		
-	public function get_metar()
-		{
+			$this->show('/instantweather/instantweather.php');
+			
+		}
+			
+		public function get_metar(){
+			
 			$last_location = PIREPData::getLastReports(Auth::$userinfo->pilotid, 1, PIREP_ACCEPTED);
 			$curr_location = $last_location->arricao;
 			
@@ -69,9 +69,8 @@ class InstantWeather extends CodonModule
 			
 			echo $metar;
 		}
-		
-	public function sky_condition()
-		{
+			
+		public function sky_condition(){
 			
 			$last_location = PIREPData::getLastReports(Auth::$userinfo->pilotid, 1, PIREP_ACCEPTED);
 			$curr_location = $last_location->arricao;
@@ -117,11 +116,11 @@ class InstantWeather extends CodonModule
 					}
 					
 					
-					echo '<tr> <td><b>Sky condition level '.$i.'</b></td> <td>'.$skycover. ' ' . $cond->attributes()->{'cloud_base_ft_agl'}.' ft'. PHP_EOL .$skycover_uncrypt.'</td> </tr>';
+					echo '<tr> <td class="fat">Sky condition level '.$i.'</td> <td>'.$skycover. ' ' . $cond->attributes()->{'cloud_base_ft_agl'}.' ft'. PHP_EOL .$skycover_uncrypt.'</td> </tr>';
 					$i++;
-			}
+				}
 			}
 			
 		}
-}
+	}
 ?>
