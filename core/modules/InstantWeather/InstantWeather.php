@@ -1,5 +1,5 @@
 <!--///////////////////////////////////////////////////////////////
-/////InstantWeather Module v1.1 for phpvms by Philipp Dalheimer////
+/////InstantWeather Module v1.2 for phpvms by Philipp Dalheimer////
 //////////////////////www.philippdalheimer.de//////////////////////
 ///+ DO NOT EDIT + FOR FREE USE + PHPVMS FORUM: MrDonutButter +////
 ///////////////////////////////////////////////////////////////-->
@@ -12,11 +12,11 @@
 		
 		public function chk_update(){
 			
-			$ver = 1.1; 
+			$ver = 1.2; 
 			$ver_actual = floatval(file_get_contents("http://philippdalheimer.de/instantweather_ver.txt")); 
 			
 			if($ver_actual > $ver){
-				echo ' | <a href="https://github.com/Karamellwuerfel/InstantWeather" target="_blank"><font color="red">new version '.$ver_actual.' available!</a>';
+				echo ' | <a href="https://github.com/Karamellwuerfel/InstantWeather" target="_blank"><font color="red">new version '.$ver_actual.' available!</a></font>';
 			}else{
 				//nothing
 			}

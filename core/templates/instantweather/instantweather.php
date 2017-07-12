@@ -5,7 +5,7 @@
 
 
 <!--///////////////////////////////////////////////////////////////
-/////InstantWeather Module v1.1 for phpvms by Philipp Dalheimer////
+/////InstantWeather Module v1.2 for phpvms by Philipp Dalheimer////
 //////////////////////www.philippdalheimer.de//////////////////////
 ///+ DO NOT EDIT + FOR FREE USE + PHPVMS FORUM: MrDonutButter +////
 
