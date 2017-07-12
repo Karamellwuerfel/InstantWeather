@@ -14,6 +14,9 @@ www.philippdalheimer.de
 
 3. To show the module in the navigation: <li><a href="<?php echo url('/instantweather'); ?>">InstantWeather</a></li>
 
+4. To change the displayed temperature (fahrenheit or celsius) go to the file "core/modules/InstantWeather/InstantWeather.php"
+   and change the variable value in line 30 to "c" for celsius or "f" for fahrenheit.
+
 #########QUESTIONS#########
 
 If you have questions, you can write me in phpvms forum in THIS POST (not via PN!)

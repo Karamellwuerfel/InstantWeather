@@ -1,7 +1,7 @@
 # InstantWeather
+[![Badges](http://img.shields.io/:Version-1.3-fe7d37.svg)](https://github.com/Karamellwuerfel/InstantWeather)
 
 http://forum.phpvms.net/topic/24355-simple-instantweather-module/
-
 
 Hey guys! I've made a Weather module that shows you real time and 
 
@@ -19,3 +19,22 @@ DEMO VIDEO: [(www.youtube.com/watch?v=Cx0HCaW-a5I)]
 
 
 (Tested on PHPVMS Version 2.1.936)
+
+# OPTIMIZATION
+
+You can change the displayed value indicator of the temperature now (with Update v1.3).
+To change between FAHRENHEIT and CELSIUS do the following:
+
+1. Go to the file "core/modules/InstantWeather/InstantWeather.php"
+
+2. Change the variable value in line 30 to "c" for celsius or "f" for fahrenheit
+
+Example:
+
+```PHP
+$TEMPERATURE = "c"; // shows the temperature in celsius
+```
+
+```PHP
+$TEMPERATURE = "f"; // shows the temperature in fahrenheit
+```
