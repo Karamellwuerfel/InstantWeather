@@ -7,7 +7,7 @@
 		
 		public function chk_update(){
 			
-			$ver = 1.3; 
+			$ver = 1.4; 
 			$ver_actual = floatval(file_get_contents("https://www.dropbox.com/s/6cw52cf49idjz8t/InstantWeather_ver.txt?dl=1")); 
 			
 			if($ver_actual > $ver){
