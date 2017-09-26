@@ -1,4 +1,4 @@
-InstantWeather Module v1.0 for phpvms by Philipp Dalheimer
+InstantWeather Module v1.4 for phpvms by Philipp Dalheimer
 
 www.philippdalheimer.de
 

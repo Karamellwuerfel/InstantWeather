@@ -1,5 +1,5 @@
 # InstantWeather
-[![Badges](http://img.shields.io/:Version-1.3-fe7d37.svg)](https://github.com/Karamellwuerfel/InstantWeather)
+[![Badges](http://img.shields.io/:Version-1.4-fe7d37.svg)](https://github.com/Karamellwuerfel/InstantWeather)
 
 http://forum.phpvms.net/topic/24355-simple-instantweather-module/
 
