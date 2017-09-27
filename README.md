@@ -1,5 +1,5 @@
 # InstantWeather
-[![Badges](http://img.shields.io/:Version-1.4-fe7d37.svg)](https://github.com/Karamellwuerfel/InstantWeather)
+[![Badges](http://img.shields.io/:Version-1.5-fe7d37.svg)](https://github.com/Karamellwuerfel/InstantWeather)
 
 http://forum.phpvms.net/topic/24355-simple-instantweather-module/
 
@@ -27,7 +27,7 @@ To change between FAHRENHEIT and CELSIUS do the following:
 
 1. Go to the file "core/modules/InstantWeather/InstantWeather.php"
 
-2. Change the variable value in line 30 to "c" for celsius or "f" for fahrenheit
+2. Change the variable value in line 24 to "c" for celsius or "f" for fahrenheit
 
 Example:
 
@@ -37,4 +37,23 @@ $TEMPERATURE = "c"; // shows the temperature in celsius
 
 ```PHP
 $TEMPERATURE = "f"; // shows the temperature in fahrenheit
+```
+
+---
+
+You can change the displayed value indicator of the visibility now (with Update v1.5).
+To change between MILES and KILOMETERS do the following:
+
+1. Go to the file "core/modules/InstantWeather/InstantWeather.php"
+
+2. Change the variable value in line 25 to "m" for miles or "k" for kilometers
+
+Example:
+
+```PHP
+$VISIBILITY = "m"; // shows the visibility in miles
+```
+
+```PHP
+$VISIBILITY = "k"; // shows the visibility in kilometers
 ```
