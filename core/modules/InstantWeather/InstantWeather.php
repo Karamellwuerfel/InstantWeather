@@ -7,7 +7,7 @@
 		
 		public function chk_update(){
 			
-			$ver = 1.5; 
+			$ver = 1.6; 
 			$ver_actual = floatval(file_get_contents("https://www.dropbox.com/s/6cw52cf49idjz8t/InstantWeather_ver.txt?dl=1")); 
 			
 			if($ver_actual > $ver){
@@ -47,7 +47,7 @@
 			$visibility_statute_mi = $xml->data[0]->METAR->visibility_statute_mi;
 			$dewpoint_c = $xml->data[0]->METAR->dewpoint_c;
 			$elevation_m = $xml->data[0]->METAR->elevation_m;
-			$altim_in_hg = $xml->data[0]->METAR->altim_in_hg;
+			$altim_bar = 33.8639 * ($xml->data[0]->METAR->altim_in_hg);
 			
 			$temp_f = ($temp_c * (9 / 5) ) + 32;
 			$dewpoint_f = ($dewpoint_c * (9 / 5) ) + 32;
@@ -63,7 +63,7 @@
 			$this->set('wind_speed_kt', $wind_speed_kt);
 			$this->set('visibility_statute_mi', $visibility_statute_mi);
 			$this->set('elevation', $elevation_m);
-			$this->set('altim_in_hg', $altim_in_hg);
+			$this->set('altim_bar', $altim_bar);
 	
 			if($TEMPERATURE == $celsius){
 				$this->set('dewpoint', $dewpoint_c);

@@ -3,7 +3,7 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 
 <!--///////////////////////////////////////////////////////////////
-/////InstantWeather Module v1.5 for phpvms by Philipp Dalheimer////
+/////InstantWeather Module v1.6 for phpvms by Philipp Dalheimer////
 //////////////////////www.philippdalheimer.de//////////////////////
 ///+ DO NOT EDIT + FOR FREE USE + PHPVMS FORUM: MrDonutButter +////
 
@@ -34,7 +34,7 @@ Weather API from https://aviationweather.gov/adds/dataserver/metars/MetarExample
 				  </tr>
 				  <tr>
 					<td class="fat">Pressure (altimeter)</td>
-					<td><?php echo $altim_in_hg . " inches Hg";?></td>
+					<td><?php echo $altim_bar . " mbar";?></td>
 				  </tr>
 				  <tr>
 					<td class="fat">Wind</td>
@@ -57,7 +57,7 @@ Weather API from https://aviationweather.gov/adds/dataserver/metars/MetarExample
 					
 				</table>
 				<br>
-				<small style="color:#a3a3a3;">Updated <?php echo $observation_time;?>  |  InstantWeather Module v1.5 by <a href="https://github.com/Karamellwuerfel/InstantWeather" target="_blank">Philipp Dalheimer</a><?php MainController::Run('InstantWeather', 'chk_update', ''); ?>
+				<small style="color:#a3a3a3;">Updated <?php echo $observation_time;?>  |  InstantWeather Module v1.6 by <a href="https://github.com/Karamellwuerfel/InstantWeather" target="_blank">Philipp Dalheimer</a><?php MainController::Run('InstantWeather', 'chk_update', ''); ?>
 					<br>
 					<br>
 					How do I <a href="https://en.wikipedia.org/wiki/METAR#Example_METAR_codes" target="_blank"> read METAR </a> and how do I <a href="https://en.wikipedia.org/wiki/METAR#Cloud_reporting" target="_blank">read sky condition</a> ?

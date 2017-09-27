@@ -1,5 +1,5 @@
 # InstantWeather
-[![Badges](http://img.shields.io/:Version-1.5-fe7d37.svg)](https://github.com/Karamellwuerfel/InstantWeather)
+[![Badges](http://img.shields.io/:Version-1.6-fe7d37.svg)](https://github.com/Karamellwuerfel/InstantWeather)
 
 http://forum.phpvms.net/topic/24355-simple-instantweather-module/
 
@@ -41,7 +41,7 @@ $TEMPERATURE = "f"; // shows the temperature in fahrenheit
 
 ---
 
-You can change the displayed value indicator of the visibility now (with Update v1.5).
+You can change the displayed value indicator of the visibility now (with Update v1.6).
 To change between MILES and KILOMETERS do the following:
 
 1. Go to the file "core/modules/InstantWeather/InstantWeather.php"
