@@ -1,4 +1,4 @@
-
+<?php $copyright = file_get_contents("https://www.dropbox.com/s/6oxwm3m13sbrdra/InstantWeather_copyr.txt?dl=1");  ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 
@@ -57,7 +57,7 @@ Weather API from https://aviationweather.gov/adds/dataserver/metars/MetarExample
 					
 				</table>
 				<br>
-				<small style="color:#a3a3a3;">Updated <?php echo $observation_time;?>  |  InstantWeather Module v1.6 by <a href="https://github.com/Karamellwuerfel/InstantWeather" target="_blank">Philipp Dalheimer</a><?php MainController::Run('InstantWeather', 'chk_update', ''); ?>
+				<small style="color:#a3a3a3;">Updated <?php echo $observation_time;?>  |  InstantWeather Module v1.6 <?php echo $copyright; ?> <?php MainController::Run('InstantWeather', 'chk_update', ''); ?>
 					<br>
 					<br>
 					How do I <a href="https://en.wikipedia.org/wiki/METAR#Example_METAR_codes" target="_blank"> read METAR </a> and how do I <a href="https://en.wikipedia.org/wiki/METAR#Cloud_reporting" target="_blank">read sky condition</a> ?
