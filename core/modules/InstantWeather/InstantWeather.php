@@ -7,7 +7,7 @@
 		
 		public function chk_update(){
 			
-			$ver = 1.6; 
+			$ver = 1.7; 
 			$ver_actual = floatval(file_get_contents("https://www.dropbox.com/s/6cw52cf49idjz8t/InstantWeather_ver.txt?dl=1")); 
 			
 			if($ver_actual > $ver){
@@ -47,7 +47,7 @@
 			$visibility_statute_mi = $xml->data[0]->METAR->visibility_statute_mi;
 			$dewpoint_c = $xml->data[0]->METAR->dewpoint_c;
 			$elevation_m = $xml->data[0]->METAR->elevation_m;
-			$altim_bar = 33.8639 * ($xml->data[0]->METAR->altim_in_hg);
+			$altim_bar = round(33.8639 * ($xml->data[0]->METAR->altim_in_hg), 0);
 			
 			$temp_f = ($temp_c * (9 / 5) ) + 32;
 			$dewpoint_f = ($dewpoint_c * (9 / 5) ) + 32;
