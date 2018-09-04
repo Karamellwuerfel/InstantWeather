@@ -1,13 +1,22 @@
 <?php
 
+/*///////////////////////////////////////////////////////////////
+/////InstantWeather Module v1.8 for phpvms by Philipp Dalheimer////
+//////////////////////www.philippdalheimer.de//////////////////////
+///+ DO NOT EDIT + FOR FREE USE + PHPVMS FORUM: MrDonutButter +////
+
+Weather API from https://aviationweather.gov/adds/dataserver/metars/MetarExamples.php
+
+///////////////////////////////////////////////////////////////*/
+
+
+
 	class InstantWeather extends CodonModule
 	{
 		
-		
-		
 		public function chk_update(){
 			
-			$ver = 1.7; 
+			$ver = 1.8; 
 			$ver_actual = floatval(file_get_contents("https://www.dropbox.com/s/6cw52cf49idjz8t/InstantWeather_ver.txt?dl=1")); 
 			
 			if($ver_actual > $ver){
@@ -20,6 +29,7 @@
 			
 		
 		public function index(){
+
 			
 			$TEMPERATURE = "f"; // USE f for FAHRENHEIT and c for CELSIUS
 			$VISIBILITY = "k"; // USE m for MILES and k for KILOMETERS
@@ -33,9 +43,18 @@
 			$bids = SchedulesData::getAllBids();  
 			
 			
-			$last_location = PIREPData::getLastReports(Auth::$userinfo->pilotid, 1, PIREP_ACCEPTED);
-			$curr_location = $last_location->arricao;
+
+			if(isset($_GET['icao']) && strlen($_GET['icao']) <= 4)
+			{
+				$last_location = PIREPData::getLastReports(Auth::$userinfo->pilotid, 1, PIREP_ACCEPTED);
+				$curr_location = $_GET['icao'];
+			}else{
+				$last_location = PIREPData::getLastReports(Auth::$userinfo->pilotid, 1, PIREP_ACCEPTED);
+				$curr_location = $last_location->arricao;	
+			}
+			
 			$url = 'https://www.aviationweather.gov/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&stationString='.$curr_location.'&hoursBeforeNow=1.0';
+
 			$xml = simplexml_load_file($url);
 
 			$metar = $xml->data[0]->METAR->raw_text;
@@ -90,8 +109,14 @@
 			
 		public function get_metar(){
 			
-			$last_location = PIREPData::getLastReports(Auth::$userinfo->pilotid, 1, PIREP_ACCEPTED);
-			$curr_location = $last_location->arricao;
+			if(isset($_GET['icao']) && strlen($_GET['icao']) <= 4)
+			{
+				$last_location = PIREPData::getLastReports(Auth::$userinfo->pilotid, 1, PIREP_ACCEPTED);
+				$curr_location = $_GET['icao'];
+			}else{
+				$last_location = PIREPData::getLastReports(Auth::$userinfo->pilotid, 1, PIREP_ACCEPTED);
+				$curr_location = $last_location->arricao;	
+			}
 			
 			$url = 'https://www.aviationweather.gov/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&stationString='.$curr_location.'&hoursBeforeNow=1.0';
 			$xml = simplexml_load_file($url);
@@ -103,8 +128,14 @@
 			
 		public function sky_condition(){
 			
-			$last_location = PIREPData::getLastReports(Auth::$userinfo->pilotid, 1, PIREP_ACCEPTED);
-			$curr_location = $last_location->arricao;
+			if(isset($_GET['icao']) && strlen($_GET['icao']) <= 4)
+			{
+				$last_location = PIREPData::getLastReports(Auth::$userinfo->pilotid, 1, PIREP_ACCEPTED);
+				$curr_location = $_GET['icao'];
+			}else{
+				$last_location = PIREPData::getLastReports(Auth::$userinfo->pilotid, 1, PIREP_ACCEPTED);
+				$curr_location = $last_location->arricao;	
+			}
 			
 			$url = 'https://www.aviationweather.gov/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&stationString='.$curr_location.'&hoursBeforeNow=1.0';
 			$xml = simplexml_load_file($url);

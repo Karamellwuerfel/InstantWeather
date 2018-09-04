@@ -1,5 +1,5 @@
 # InstantWeather
-[![Badges](http://img.shields.io/:Version-1.7-fe7d37.svg)](https://github.com/Karamellwuerfel/InstantWeather)
+[![Badges](http://img.shields.io/:Version-1.8-fe7d37.svg)](https://github.com/Karamellwuerfel/InstantWeather)
 
 http://forum.phpvms.net/topic/24355-simple-instantweather-module/
 
@@ -18,7 +18,7 @@ DEMO VIDEO: [(www.youtube.com/watch?v=Cx0HCaW-a5I)]
 3. To show the modulein the navigation:&lt;li&gt;&lt;a href="&lt;?php echo url('/instantweather'); ?&gt;"&gt;InstantWeather&lt;/a&gt;&lt;/li&gt;
 
 
-(Tested on PHPVMS Version 2.1.936)
+(Tested on PHPVMS Version simpilot 5.5.2)
 
 # OPTIMIZATION
 
@@ -57,3 +57,8 @@ $VISIBILITY = "m"; // shows the visibility in miles
 ```PHP
 $VISIBILITY = "k"; // shows the visibility in kilometers
 ```
+
+### MANUALLY SET ICAO
+
+1. To set manually an icao (airport) you have to add a get request via php. Do it like this:
+   Add at the end of the InstantWeather URL "?icao=ICAO_HERE" like this example: http://phpvms.philippdalheimer.de/index.php/instantweather?icao=edfh

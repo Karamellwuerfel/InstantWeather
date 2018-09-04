@@ -1,4 +1,4 @@
-InstantWeather Module v1.4 for phpvms by Philipp Dalheimer
+InstantWeather Module v1.8 for phpvms by Philipp Dalheimer
 
 www.philippdalheimer.de
 
@@ -16,6 +16,9 @@ www.philippdalheimer.de
 
 4. To change the displayed temperature (fahrenheit or celsius) go to the file "core/modules/InstantWeather/InstantWeather.php"
    and change the variable value in line 30 to "c" for celsius or "f" for fahrenheit.
+
+5. To set manually an icao (airport) you have to add a get request via php. Do it like this:
+   Add at the end of the InstantWeather URL "?icao=ICAO_HERE" like this example: http://phpvms.philippdalheimer.de/index.php/instantweather?icao=edfh
 
 #########QUESTIONS#########
 

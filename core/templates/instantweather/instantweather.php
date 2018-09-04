@@ -3,7 +3,7 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 
 <!--///////////////////////////////////////////////////////////////
-/////InstantWeather Module v1.6 for phpvms by Philipp Dalheimer////
+/////InstantWeather Module v1.8 for phpvms by Philipp Dalheimer////
 //////////////////////www.philippdalheimer.de//////////////////////
 ///+ DO NOT EDIT + FOR FREE USE + PHPVMS FORUM: MrDonutButter +////
 
@@ -19,7 +19,7 @@ Weather API from https://aviationweather.gov/adds/dataserver/metars/MetarExample
 	
 		<?php 
 		
-			if(!$last_location){
+			if(!$last_location->arricao){
 				echo "<h3 class=\"h3\" style=\"font-weight: 300;\">Oh... What? You're at home! We only know the weather on airports!</h3>";
 			}elseif(!$metar){
 				echo "<h3 class=\"h3\" style=\"font-weight: 300;\">Sorry... The server needs a moment! Please try it again in a minute. <i class=\"fa fa-frown-o\"></i></h3>";
@@ -57,7 +57,7 @@ Weather API from https://aviationweather.gov/adds/dataserver/metars/MetarExample
 					
 				</table>
 				<br>
-				<small style="color:#a3a3a3;">Updated <?php echo $observation_time;?>  |  InstantWeather Module v1.7 <?php echo $copyright; ?> <?php MainController::Run('InstantWeather', 'chk_update', ''); ?>
+				<small style="color:#a3a3a3;">Updated <?php echo $observation_time;?>  |  InstantWeather Module v1.8 <?php echo $copyright; ?> <?php MainController::Run('InstantWeather', 'chk_update', ''); ?>
 					<br>
 					<br>
 					How do I <a href="https://en.wikipedia.org/wiki/METAR#Example_METAR_codes" target="_blank"> read METAR </a> and how do I <a href="https://en.wikipedia.org/wiki/METAR#Cloud_reporting" target="_blank">read sky condition</a> ?
