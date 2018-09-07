@@ -3,7 +3,7 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 
 <!--///////////////////////////////////////////////////////////////
-/////InstantWeather Module v1.8 for phpvms by Philipp Dalheimer////
+/////InstantWeather Module v1.9 for phpvms by Philipp Dalheimer////
 //////////////////////www.philippdalheimer.de//////////////////////
 ///+ DO NOT EDIT + FOR FREE USE + PHPVMS FORUM: MrDonutButter +////
 
@@ -57,7 +57,7 @@ Weather API from https://aviationweather.gov/adds/dataserver/metars/MetarExample
 					
 				</table>
 				<br>
-				<small style="color:#a3a3a3;">Updated <?php echo $observation_time;?>  |  InstantWeather Module v1.8 <?php echo $copyright; ?> <?php MainController::Run('InstantWeather', 'chk_update', ''); ?>
+				<small style="color:#a3a3a3;">Updated <?php echo $observation_time;?>  |  InstantWeather Module v1.9 <?php echo $copyright; ?> <?php MainController::Run('InstantWeather', 'chk_update', ''); ?>
 					<br>
 					<br>
 					How do I <a href="https://en.wikipedia.org/wiki/METAR#Example_METAR_codes" target="_blank"> read METAR </a> and how do I <a href="https://en.wikipedia.org/wiki/METAR#Cloud_reporting" target="_blank">read sky condition</a> ?
